@@ -63,7 +63,13 @@ function setupCookie() {
 }
 
 function sendNotificationIfNeed() {
-
+const options1 ={
+    uri:  `https://whyloveyou.com/util/send?send_context=`+desp+`&email=${SCKEY}&send_title=jd`,
+    method: 'GET'
+  }
+  rp.get(options1).then(res=>{
+    console.log("推送成功")
+  })
   if (!push_key) {
     console.log('执行任务结束!'); return;
   }
